@@ -1,0 +1,37 @@
+.selector {
+    border: solid 2px white;
+    border-radius: 70px;
+    
+    white-space: nowrap;
+    width: fit-content;
+
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left:1.5%;
+    padding-right:2%;
+}
+
+.selector:hover {
+    cursor:pointer;
+}
+.category-display:hover {
+    cursor:pointer;
+}
+
+.arrow-icon {
+    margin-bottom: -3px;
+    margin-left: 15px;
+    margin-right: -20px;
+}
+
+.arrow-icon-down {
+    margin-bottom: -3px;
+    margin-left: 15px;
+    margin-right: -20px;
+    color: orange;
+}
+
+.orange {
+    color: orange;
+    border-color: orange;
+}
