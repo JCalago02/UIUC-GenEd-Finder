@@ -3,6 +3,9 @@
     border-radius: 7px;
     width: fit-content;
 }
+.day-wrapper:hover{
+    cursor: pointer;
+}
 
 .day-text{
     padding:10px 20px;

@@ -12,6 +12,12 @@
     padding: 1% 2%;
 }
 
+@media (max-width: 600px) {
+    .flex-wrapper-gpa {
+        left:10px;
+    }
+}
+
 .deci-input {
     width: 45px;
     border-radius: 7px;

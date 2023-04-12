@@ -4,4 +4,12 @@
     left: 140px;
     display: grid;
     width: fit-content;
+
+    
+}
+
+@media (max-width: 600px) {
+        .grid-wrapper {
+            left:10px;
+        }
 }
