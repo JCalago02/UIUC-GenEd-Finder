@@ -1,6 +1,5 @@
 import CheckAndLabel from '../CheckAndLabel/CheckAndLabel'
 import './CategorySelector.css'
-import { useState } from 'react';
 
 function CategorySelector({selectedCategories, setSelectedCategories}) {
     const headerList = ["Cultural Studies", "US Minority",  "Western Compar. Culture", "Non-Western Culture",
