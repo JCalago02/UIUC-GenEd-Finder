@@ -1,0 +1,18 @@
+.grid-display-restriction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: space-between;
+    align-items: center;
+    padding: 1px 8px;
+    border: solid 2px white;
+    border-radius: 70px;
+}
+
+.x-button {
+    justify-self: right;
+    
+}
+
+.x-button:hover {
+    cursor: pointer;
+}
