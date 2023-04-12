@@ -5,6 +5,7 @@ import CategorySelector from "../../Components/CategorySelector/CategorySelector
 import GpaSelector from "../../Components/GpaSelector/GpaSelector";
 import TimeSelectorSection from "../TimeSelectorSection/TimeSelectorSection";
 
+
 function SearchFilterRow() {
     const [showId, setShowId] = useState(-1);
     const [selectedCategories, setSelectedCategories] = useState(Array(16).fill(false));
@@ -35,7 +36,6 @@ function SearchFilterRow() {
                 {showId === 2 ? (<GpaSelector setMinGpa={setGpaBounds}/>) : null}
                 {showId === 3 ? (<TimeSelectorSection setTimeList={setTimeList}/>) : null}
             </div>
-            <div className='flex-container'>hello</div>
         </div>
         
     )
