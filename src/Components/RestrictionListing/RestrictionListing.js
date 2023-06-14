@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import"./RestrictionListing.css"
 import { FaTimes } from "react-icons/fa"
 
