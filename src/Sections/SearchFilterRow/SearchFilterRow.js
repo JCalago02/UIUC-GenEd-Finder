@@ -6,11 +6,16 @@ import GpaSelector from "../../Components/GpaSelector/GpaSelector";
 import TimeSelectorSection from "../TimeSelectorSection/TimeSelectorSection";
 
 
-function SearchFilterRow() {
+function SearchFilterRow({restrictionList, setRestrictionList}) {
     const [showId, setShowId] = useState(-1);
     const [selectedCategories, setSelectedCategories] = useState(Array(16).fill(false));
     const [gpaBounds, setGpaBounds] = useState([-2,-1]);
-    const [timeList, setTimeList] = useState([])
+    const [timeList, setTimeList] = useState([]);
+    
+    function HandleGPAChange(newGPABounds) {
+        const newRestrictionList = restrictionList;
+        
+    }
     return (
         <div className="filter-container">
             <div className="flex-container">
@@ -33,7 +38,7 @@ function SearchFilterRow() {
             </div>
             <div className="flex-container">
                 {showId === 1 ? ( <CategorySelector selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories}></CategorySelector>) : null }
-                {showId === 2 ? (<GpaSelector setMinGpa={setGpaBounds}/>) : null}
+                {showId === 2 ? (<GpaSelector setGPABounds={HandleGPAChange}/>) : null}
                 {showId === 3 ? (<TimeSelectorSection setTimeList={setTimeList}/>) : null}
             </div>
         </div>
