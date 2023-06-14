@@ -1,10 +1,10 @@
 import RestrictionListing from "../../Components/RestrictionListing/RestrictionListing";
 import "./RestrictionList.css"
-import { useEffect } from "react";
 function RestrictionList({restrictionList, setRestrictionList}) {
     
     return (
         <div className="flex-container-restrictions">
+            Current Restrictions: 
             {restrictionList.map((displayText, i) => (
                 <RestrictionListing id={i} 
                                     displayText={displayText} 
