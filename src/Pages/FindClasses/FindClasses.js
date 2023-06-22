@@ -18,17 +18,12 @@ const testClassInfo = {
 }
 
 
-const timeSlotExample = {
-    dayList: [],
-    earliestTime: "10:00AM",
-    latestTime: "5:00PM"
-}
 
 const defaultRestrictionList = {
     requirementCategories: Array(16).fill(false),
     minGPA: -2.0,
     maxGPA: -1.0,
-    timeSlots: [timeSlotExample]
+    timeSlots: []
 }
 
 

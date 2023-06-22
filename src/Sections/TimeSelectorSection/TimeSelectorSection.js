@@ -4,13 +4,13 @@ import DaySelector from '../../Components/DaySelector/DaySelector'
 import TimeSelector from '../../Components/TimeSelector/TimeSelector'
 import { FaRegCheckSquare, FaRegSquare } from 'react-icons/fa'
 
-function TimeSelectorSection(setListTimeRestrictions) {
+function TimeSelectorSection({setTimeList}) {
     const kDayList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
     const [dayRestriction, setDayRestriction] = useState({
+        dayList: [],
         startTime: "DEFAULT",
         endTime: "DEFAULT",
-        dayList: ["Monday"],
         includeOnline: false
     });    
 
@@ -51,25 +51,25 @@ function TimeSelectorSection(setListTimeRestrictions) {
     }
 
     function HandleSubmitTimeRestriction() {
-        setListTimeRestrictions(dayRestriction);
+        setTimeList(dayRestriction);
     }
     
     return (
         <div className='grid-container'>
-            <div className='leftCol'>
+            <div className='left-col'>
                 <TimeSelector labelText="Earliest Start Time: " HandleChangeTimestate={HandleChangeStartTime}></TimeSelector>
             </div>
-            <div className='leftCol'>
+            <div className='left-col'>
                 <TimeSelector labelText="Latest End Time: " HandleChangeTimestate={HandleChangeEndTime}></TimeSelector>
+            </div>
+            <div className='left-col grid-wrapper-online'>
+                    <label className='async-toggle-label'>Include online/async <br/> classes?</label>
+                    {dayRestriction.includeOnline ? (<FaRegCheckSquare className='check-button'onClick={HandleChangeOnline}/>) : (<FaRegSquare className='check-button' onClick={HandleChangeOnline}/>)}
             </div>
             <div className='right-col'>
                 {kDayList.map((day, index) => (
-                    <DaySelector id={index} dayText={day} dayListValue={dayRestriction.dayList.includes(kDayList[index])} HandleChangeDayList={HandleChangeDayList}/>
+                    <DaySelector key={index} id={index} dayText={day} dayListValue={dayRestriction.dayList.includes(kDayList[index])} HandleChangeDayList={HandleChangeDayList}/>
                 ))}
-            </div>
-            <div className='leftCol grid-wrapper-online'>
-                    <label className='h'>Include online/async <br/> classes?</label>
-                    {dayRestriction.includeOnline ? (<FaRegCheckSquare className='check-button'onClick={HandleChangeOnline}/>) : (<FaRegSquare className='check-button' onClick={HandleChangeOnline}/>)}
             </div>
             <button className='bottom-span' onClick={HandleSubmitTimeRestriction}>Submit</button>
         </div>

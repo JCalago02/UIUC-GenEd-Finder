@@ -46,7 +46,12 @@ function RestrictionListing({id, displayText, restrictionList, setRestrictionLis
         
     }
     function HandleExitClickTimeslot() {
-
+        const newTimeslotList = restrictionList.timeSlots;
+        newTimeslotList.splice(id - 17, 1);
+        setRestrictionList ({
+            ...restrictionList,
+            timeSlots: newTimeslotList
+        })
     }
     
     function HandleExitClick() {

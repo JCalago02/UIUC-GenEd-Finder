@@ -8,7 +8,6 @@ import TimeSelectorSection from "../TimeSelectorSection/TimeSelectorSection";
 
 function SearchFilterRow({restrictionList, setRestrictionList}) {
     const [showId, setShowId] = useState(-1); // state that handles which search filter menu is open
-    const [timeList, setTimeList] = useState([]);
     
     const indexToCategory = {
         0: "Cultural Studies",
@@ -45,6 +44,15 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
             requirementCategories: newRequirementCategories
         })
     }
+
+    function HandleTimeslotChange(newTimeslot) {
+        const newTimeslotList = restrictionList.timeSlots;
+        newTimeslotList.push(newTimeslot);
+        setRestrictionList({
+            ...restrictionList,
+            timeSlots: newTimeslotList
+        })
+    }
     return (
         <div className="filter-container">
             <div className="flex-container">
@@ -68,7 +76,7 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
             <div className="flex-container">
                 {showId === 1 ? ( <CategorySelector selectedCategories={restrictionList.requirementCategories} submitSelectedCategories={HandleCategoryChange}></CategorySelector>) : null }
                 {showId === 2 ? (<GpaSelector setGPABounds={HandleGPAChange}/>) : null}
-                {showId === 3 ? (<TimeSelectorSection setTimeList={setTimeList}/>) : null}
+                {showId === 3 ? (<TimeSelectorSection setTimeList={HandleTimeslotChange}/>) : null}
             </div>
         </div>
         
