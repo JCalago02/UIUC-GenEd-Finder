@@ -17,8 +17,23 @@ const testClassInfo = {
     link: "https://courses.illinois.edu/schedule/2023/fall/HIST/141"
 }
 
+
+const timeSlotExample = {
+    dayList: [],
+    earliestTime: "10:00AM",
+    latestTime: "5:00PM"
+}
+
+const defaultRestrictionList = {
+    requirementCategories: Array(16).fill(false),
+    minGPA: -1.0,
+    maxGPA: -1.0,
+    timeSlots: [timeSlotExample]
+}
+
+
 function FindClasses() {
-    const [restrictionList, setRestrictionList] = useState(["Hello", "There"]);
+    const [restrictionList, setRestrictionList] = useState(defaultRestrictionList);
     return (
         <div className="find-classes-page-content">
             <SearchFilterRow restrictionList={restrictionList} setRestrictionList={setRestrictionList}/>
