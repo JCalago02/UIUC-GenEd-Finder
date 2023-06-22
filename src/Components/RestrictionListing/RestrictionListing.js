@@ -1,19 +1,64 @@
 import"./RestrictionListing.css"
 import { FaTimes } from "react-icons/fa"
 
-function RestrictionListing({displayText, restrictionList, setRestrictionList}) {
-    function handleExitClick() {
-        setRestrictionList(
-            restrictionList.filter(a =>
-              a !== displayText
-            )
-        );
+function RestrictionListing({id, displayText, restrictionList, setRestrictionList, type}) {
+
+    function HandleComplexSwitches(newRequirementCategories) {
+        if (newRequirementCategories[id] == false)
+            return;
+        switch(id) {
+            case 1:
+            case 2:
+            case 3:
+                newRequirementCategories[0] = false;
+                break;
+            case 5:
+            case 6:
+                newRequirementCategories[4] = false;
+                break;
+            case 8:
+            case 9:
+                newRequirementCategories[7] = false;
+                break;
+            case 11:
+            case 12:
+                newRequirementCategories[10] = false;
+                break;
+        }
+    }
+    function HandleExitClickRequirement() {
+        let newRequirementCategories = restrictionList.requirementCategories;
+        HandleComplexSwitches(newRequirementCategories);
+        newRequirementCategories[id] = !newRequirementCategories[id];
+        setRestrictionList ({
+            ...restrictionList,
+            requirementCategories: newRequirementCategories
+        })
+    }
+    function HandleExitClickGPA() {
+
+    }
+    function HandleExitClickTimeslot() {
+
+    }
+    function HandleExitClick() {
+        switch(type) {
+            case "requirement":
+                HandleExitClickRequirement()
+                break;
+            case "gpa":
+                HandleExitClickGPA()
+                break;
+            case "timeslot":
+                HandleExitClickTimeslot()
+                break;
+        }
     }
 
     return (
         <div className="grid-display-restriction">
             <label>{displayText}</label>
-            <FaTimes className="x-button" onClick={handleExitClick}></FaTimes>
+            <FaTimes className="x-button" onClick={HandleExitClick}></FaTimes>
         </div>
     )
 }
