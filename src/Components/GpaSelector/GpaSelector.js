@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 function GpaSelector({setGPABounds}) {
-    const [localGPABounds, setLocalGPABounds] = useState([-1, -1]);
+    const [localGPABounds, setLocalGPABounds] = useState([-2, -1]);
 
     function HandleMinChange(e) {
         const isValid = e.target.value.length !== 0;
