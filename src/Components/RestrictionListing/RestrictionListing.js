@@ -26,6 +26,7 @@ function RestrictionListing({id, displayText, restrictionList, setRestrictionLis
                 break;
         }
     }
+
     function HandleExitClickRequirement() {
         let newRequirementCategories = restrictionList.requirementCategories;
         HandleComplexSwitches(newRequirementCategories);
@@ -35,12 +36,19 @@ function RestrictionListing({id, displayText, restrictionList, setRestrictionLis
             requirementCategories: newRequirementCategories
         })
     }
-    function HandleExitClickGPA() {
 
+    function HandleExitClickGPA() {
+        setRestrictionList ({
+            ...restrictionList,
+            minGPA: -2.0,
+            maxGPA: -1.0
+        })
+        
     }
     function HandleExitClickTimeslot() {
 
     }
+    
     function HandleExitClick() {
         switch(type) {
             case "requirement":

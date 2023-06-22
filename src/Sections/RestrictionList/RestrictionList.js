@@ -33,15 +33,24 @@ function RestrictionList({restrictionList, setRestrictionList}) {
         <div className="flex-container-restrictions">
             Current Restrictions: 
             {restrictionList.requirementCategories.map((isSelected, i) => (
-                isSelected && !DetermineIsHeaderCategory(i) ?
-                <RestrictionListing id={i} 
-                                    displayText={indexToCategory[i]} 
-                                    restrictionList={restrictionList} 
+                isSelected && !DetermineIsHeaderCategory(i) 
+                ? <RestrictionListing id={i}
+                                      key={i} 
+                                      displayText={indexToCategory[i]} 
+                                      restrictionList={restrictionList} 
+                                      setRestrictionList={setRestrictionList}
+                                      type={"requirement"}/>
+                : null
+            ))
+            }
+            {restrictionList.minGPA != -2 ?
+                <RestrictionListing id = {17}
+                                    displayText={"GPA: " + restrictionList.minGPA + "-" + restrictionList.maxGPA}
+                                    restrictionList={restrictionList}
                                     setRestrictionList={setRestrictionList}
-                                    type={"requirement"}/>
+                                    type={"gpa"}/>
                 :
                 null
-            ))
             }
             
         </div>

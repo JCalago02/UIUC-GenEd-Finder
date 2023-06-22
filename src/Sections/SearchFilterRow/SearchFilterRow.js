@@ -30,10 +30,13 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
     }
 
     function HandleGPAChange(newGPABounds) {
-        const newRestrictionList = restrictionList;
-
-        HandleCategoryChange();
-        
+        const newMinGPA = newGPABounds[0];
+        const newMaxGPA = newGPABounds[1];
+        setRestrictionList ({
+            ...restrictionList,
+            minGPA: newMinGPA,
+            maxGPA: newMaxGPA,
+        })
     }
 
     function HandleCategoryChange(newRequirementCategories) {

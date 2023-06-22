@@ -3,35 +3,38 @@ import { useState } from 'react'
 
 
 function GpaSelector({setGPABounds}) {
-    const [localGPABounds, setLocalGPABounds] = useState([-2, -1]);
+    const [localMinGPA, setLocalMinGPA] = useState(-2.0);
+    const [localMaxGPA, setLocalMaxGPA] = useState(-1.0);
 
     function HandleMinChange(e) {
         const isValid = e.target.value.length !== 0;
         if (isValid) {
-            setLocalGPABounds([e.target.value, localGPABounds[1]]);
+            setLocalMinGPA(e.target.value);
         } else {
-            setLocalGPABounds([-1, localGPABounds[1]]);
+            setLocalMinGPA(-2);
         }
     }
 
     function HandleMaxChange(e) {
         const isValid = e.target.value.length !== 0;
         if (isValid) {
-            setLocalGPABounds([localGPABounds[1], e.target.value]);
+            setLocalMaxGPA(e.target.value);
         } else {
-            setLocalGPABounds([localGPABounds[1], -1]);
+            setLocalMaxGPA(-1);
         }
     }
 
-    function HandleSubmit() {
-        setGPABounds(localGPABounds);
+    function HandleGPASubmit() {
+        const returnGPABounds = [localMinGPA, localMaxGPA];
+        setGPABounds(returnGPABounds);
     }
+
 
     return (
         <div className="flex-wrapper-gpa">
             <input type="number" className="deci-input" step={0.1} placeholder='Min' onChange={HandleMinChange} ></input>
             <input type="number" className="deci-input" step={0.1} placeholder='Max' onChange={HandleMaxChange}></input>
-            <button className='submit' onClick={HandleSubmit}>Submit</button>
+            <button className='submit' onClick={HandleGPASubmit}>Submit</button>
         </div>
     )
 }

@@ -26,7 +26,7 @@ const timeSlotExample = {
 
 const defaultRestrictionList = {
     requirementCategories: Array(16).fill(false),
-    minGPA: -1.0,
+    minGPA: -2.0,
     maxGPA: -1.0,
     timeSlots: [timeSlotExample]
 }
