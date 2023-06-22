@@ -7,14 +7,40 @@ import TimeSelectorSection from "../TimeSelectorSection/TimeSelectorSection";
 
 
 function SearchFilterRow({restrictionList, setRestrictionList}) {
-    const [showId, setShowId] = useState(-1);
-    const [selectedCategories, setSelectedCategories] = useState(Array(16).fill(false));
-    const [gpaBounds, setGpaBounds] = useState([-2,-1]);
+    const [showId, setShowId] = useState(-1); // state that handles which search filter menu is open
     const [timeList, setTimeList] = useState([]);
     
+    const indexToCategory = {
+        0: "Cultural Studies",
+        1: "US Minority", 
+        2: "Western Comparative Culture",
+        3: "Non-Western Culture",
+        4: "Humanities & the Arts",
+        5: "Hist. + Philo. Perspectives",
+        6: "Literature & the Arts",
+        7: "Soc. & Behavioral Sci.",
+        8: "Behavioral Science",
+        9: "Social Science",
+        10: "Nat. Science & Tech.",
+        11: "Physical Sciences",
+        12: "Life Sciences",
+        13: "Advanced Composition",
+        14: "Quantitative Reasoning I",
+        15: "Quantitative Reasoning II"
+    }
+
     function HandleGPAChange(newGPABounds) {
         const newRestrictionList = restrictionList;
+
+        HandleCategoryChange();
         
+    }
+
+    function HandleCategoryChange(newRequirementCategories) {
+        setRestrictionList ({
+            ...restrictionList,
+            requirementCategories: newRequirementCategories
+        })
     }
     return (
         <div className="filter-container">
@@ -37,7 +63,7 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
                     changeIdFunction = {setShowId}/>
             </div>
             <div className="flex-container">
-                {showId === 1 ? ( <CategorySelector selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories}></CategorySelector>) : null }
+                {showId === 1 ? ( <CategorySelector selectedCategories={restrictionList.requirementCategories} submitSelectedCategories={HandleCategoryChange}></CategorySelector>) : null }
                 {showId === 2 ? (<GpaSelector setGPABounds={HandleGPAChange}/>) : null}
                 {showId === 3 ? (<TimeSelectorSection setTimeList={setTimeList}/>) : null}
             </div>
