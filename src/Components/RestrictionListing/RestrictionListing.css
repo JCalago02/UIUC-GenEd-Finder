@@ -1,17 +1,15 @@
-.grid-display-restriction {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: space-between;
+.restriction-display {
+    display: flex;
     align-items: center;
-    padding: 1px 8px;
+    padding: 4px 6px;
     border: solid 2px white;
     border-radius: 70px;
 }
 
 .x-button {
-    justify-self: right;
-    
+    margin-left: 10px;
 }
+
 
 .x-button:hover {
     cursor: pointer;

@@ -23,15 +23,3 @@ function SearchFilter({FilterText, id, showId, changeIdFunction}) {
 }
 
 export default SearchFilter
-
-
-/*
-<div className='selector' onClick={SwapShowDropdown}>
-                <text className='category-display'>{FilterText}</text>
-                {showDropdown? (<FaChevronDown className='arrow-icon'></FaChevronDown>) : (<FaChevronUp className='arrow-icon'></FaChevronUp>)}
-</div>
-*/
-
-/*
-
-*/

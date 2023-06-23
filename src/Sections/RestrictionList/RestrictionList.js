@@ -50,8 +50,7 @@ function RestrictionList({restrictionList, setRestrictionList}) {
     }
 
     return (
-        <div className="flex-container-restrictions">
-            Current Restrictions: 
+        <div className="flex-container-restrictions"> 
             {restrictionList.requirementCategories.map((isSelected, i) => (
                 isSelected && !DetermineIsHeaderCategory(i) 
                 ? <RestrictionListing id={i}

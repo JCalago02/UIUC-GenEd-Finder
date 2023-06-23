@@ -1,5 +1,10 @@
-.flex-container {
+.filter-container {
+    padding-top: 40px;
+}
+
+.flex-container-filter {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 2%;
+    gap: 5px;
 }

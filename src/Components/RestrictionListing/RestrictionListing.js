@@ -4,7 +4,7 @@ import { FaTimes } from "react-icons/fa"
 function RestrictionListing({id, displayText, restrictionList, setRestrictionList, type}) {
 
     function HandleComplexSwitches(newRequirementCategories) {
-        if (newRequirementCategories[id] == false)
+        if (newRequirementCategories[id] === false)
             return;
         switch(id) {
             case 1:
@@ -69,7 +69,7 @@ function RestrictionListing({id, displayText, restrictionList, setRestrictionLis
     }
 
     return (
-        <div className="grid-display-restriction">
+        <div className="restriction-display">
             <label>{displayText}</label>
             <FaTimes className="x-button" onClick={HandleExitClick}></FaTimes>
         </div>

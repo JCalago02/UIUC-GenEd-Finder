@@ -55,7 +55,7 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
     }
     return (
         <div className="filter-container">
-            <div className="flex-container">
+            <div className="flex-container-filter">
                 Filters: 
                 <SearchFilter 
                     FilterText={"Requirement Category"}
@@ -73,11 +73,11 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
                     showId = {showId}
                     changeIdFunction = {setShowId}/>
             </div>
-            <div className="flex-container">
-                {showId === 1 ? ( <CategorySelector selectedCategories={restrictionList.requirementCategories} submitSelectedCategories={HandleCategoryChange}></CategorySelector>) : null }
-                {showId === 2 ? (<GpaSelector setGPABounds={HandleGPAChange}/>) : null}
-                {showId === 3 ? (<TimeSelectorSection setTimeList={HandleTimeslotChange}/>) : null}
-            </div>
+
+            {showId === 1 ? ( <CategorySelector selectedCategories={restrictionList.requirementCategories} submitSelectedCategories={HandleCategoryChange}></CategorySelector>) : null }
+            {showId === 2 ? (<GpaSelector setGPABounds={HandleGPAChange}/>) : null}
+            {showId === 3 ? (<TimeSelectorSection setTimeList={HandleTimeslotChange}/>) : null}
+
         </div>
         
     )

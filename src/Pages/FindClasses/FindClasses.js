@@ -31,6 +31,10 @@ function FindClasses() {
     const [restrictionList, setRestrictionList] = useState(defaultRestrictionList);
     return (
         <div className="find-classes-page-content">
+            <div className="find-classes-header-container">
+                <label className="find-classes-header find-classes-bold">Advanced Gen-Ed Search Tool</label>
+                <label className="find-classes-header">Input your search filters and hit search to see what Gen-Eds fit best for you!</label>
+            </div>
             <SearchFilterRow restrictionList={restrictionList} setRestrictionList={setRestrictionList}/>
             <RestrictionList restrictionList={restrictionList} setRestrictionList={setRestrictionList}/>
             <div className='find-classes-results-container'>

@@ -1,14 +1,9 @@
 .selector {
+    display: flex;
+    align-items: center;
+    padding: 8px 6px;
     border: solid 2px white;
     border-radius: 70px;
-    
-    white-space: nowrap;
-    width: fit-content;
-
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    padding-left:1.5%;
-    padding-right:2%;
 }
 
 .selector:hover {
@@ -19,15 +14,10 @@
 }
 
 .arrow-icon {
-    margin-bottom: -3px;
-    margin-left: 15px;
-    margin-right: -20px;
+    margin-left: 10px;
 }
 
 .arrow-icon-down {
-    margin-bottom: -3px;
-    margin-left: 15px;
-    margin-right: -20px;
     color: orange;
 }
 
