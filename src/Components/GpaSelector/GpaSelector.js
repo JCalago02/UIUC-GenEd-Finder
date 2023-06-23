@@ -34,7 +34,7 @@ function GpaSelector({setGPABounds}) {
         <div className="flex-wrapper-gpa">
             <input type="number" className="deci-input" step={0.1} placeholder='Min' onChange={HandleMinChange} ></input>
             <input type="number" className="deci-input" step={0.1} placeholder='Max' onChange={HandleMaxChange}></input>
-            <button className='submit' onClick={HandleGPASubmit}>Submit</button>
+            <button className="gpa-submit-button" onClick={HandleGPASubmit}>Submit</button>
         </div>
     )
 }
