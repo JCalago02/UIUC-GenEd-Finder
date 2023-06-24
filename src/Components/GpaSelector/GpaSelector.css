@@ -1,7 +1,6 @@
 .flex-wrapper-gpa {
     position:absolute;
-    top:280px;
-    left: 85px;
+    margin: 15px 0px 0px 260px;
     background-color: black;
     border-top: solid 2px orange;
     display: flex;

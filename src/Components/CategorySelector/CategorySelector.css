@@ -1,7 +1,7 @@
 .grid-wrapper {
+    
     position: absolute;
-    top: 280px;
-    left: 85px;
+    margin: 15px 0px 0px 55px;
     display: grid;
     width: fit-content;
 
