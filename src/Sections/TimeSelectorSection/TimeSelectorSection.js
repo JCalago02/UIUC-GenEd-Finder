@@ -57,10 +57,10 @@ function TimeSelectorSection({setTimeList}) {
     return (
         <div className='grid-container'>
             <div className='left-col'>
-                <TimeSelector labelText="Earliest Start Time: " HandleChangeTimestate={HandleChangeStartTime}></TimeSelector>
+                <TimeSelector labelText="Earliest Start Time: " HandleChangeTimeState={HandleChangeStartTime}></TimeSelector>
             </div>
             <div className='left-col'>
-                <TimeSelector labelText="Latest End Time: " HandleChangeTimestate={HandleChangeEndTime}></TimeSelector>
+                <TimeSelector labelText="Latest End Time: " HandleChangeTimeState={HandleChangeEndTime}></TimeSelector>
             </div>
             <div className='left-col grid-wrapper-online'>
                     <label className='async-toggle-label'>Include online/async <br/> classes?</label>
