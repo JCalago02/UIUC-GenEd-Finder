@@ -18,7 +18,6 @@ const testClassInfo = {
 }
 
 
-
 const defaultRestrictionList = {
     requirementCategories: Array(16).fill(false),
     minGPA: -2.0,
