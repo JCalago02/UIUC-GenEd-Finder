@@ -1,25 +1,35 @@
 import './TimeSelector.css'
 
-function TimeSelector({labelText, HandleChangeTimestate}) {
+function TimeSelector({labelText, HandleChangeTimeState}) {
     function HandleTimeChange(e) {
-        var newStr = e.target.value
-        if (newStr.length == 5) {
-            var hour = parseInt(newStr.substring(0,2))
-            const isPM = hour > 11
-            if (hour == 0) {
-                hour = 12;
-            } else {
-                if (hour == 12) hour = 24;
-            }
+        const unformattedTime = e.target.value;
+        const isValidTime = unformattedTime.length === 5;
+        if (isValidTime) {
+            var formattedTime = "";
+            const isPM = parseInt(unformattedTime.substr(0,2)) / 11 > 1;
             if (isPM) {
-                newStr = (hour - 12).toString() + newStr.substring(2, 5) + " PM"
+                if (unformattedTime.substr(0, 2) === "12") {
+                    formattedTime += "12";
+                } else {
+                    const unformattedHour = parseInt(unformattedTime.substr(0,2));
+                    formattedTime += (unformattedHour - 12).toString();
+                }
+                formattedTime += unformattedTime.substr(2, 5);
+                formattedTime += " PM"
+                console.log(formattedTime);
             } else {
-                newStr = (hour).toString() + newStr.substring(2,5) + " AM"
+                if (unformattedTime.substr(0, 2) === "00") {
+                    formattedTime += "12";
+                } else {
+                    formattedTime += unformattedTime.substr(0, 2);
+                }
+                formattedTime += unformattedTime.substr(2, 5);
+                formattedTime += " AM"
+                console.log(formattedTime);
             }
-            console.log(newStr)
-            HandleChangeTimestate(newStr);
+            HandleChangeTimeState(formattedTime);
         } else {
-            HandleChangeTimestate("DEFAULT");
+            HandleChangeTimeState("DEFAULT");
         }
     }
     return (
