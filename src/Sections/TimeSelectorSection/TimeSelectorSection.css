@@ -1,7 +1,6 @@
 .grid-container {
     position:absolute;
-    top:280px;
-    left: 85px;
+    margin: 15px 0px 0px 383px;
     background-color: black;
     padding: 1% 2%;
     border-top: solid 2px orange;

@@ -74,7 +74,7 @@ function SearchFilterRow({restrictionList, setRestrictionList}) {
                     changeIdFunction = {setShowId}/>
             </div>
 
-            {showId === 1 ? ( <CategorySelector selectedCategories={restrictionList.requirementCategories} submitSelectedCategories={HandleCategoryChange}></CategorySelector>) : null }
+            {showId === 1 ? (<CategorySelector selectedCategories={restrictionList.requirementCategories} submitSelectedCategories={HandleCategoryChange}></CategorySelector>) : null }
             {showId === 2 ? (<GpaSelector setGPABounds={HandleGPAChange}/>) : null}
             {showId === 3 ? (<TimeSelectorSection setTimeList={HandleTimeslotChange}/>) : null}
 
