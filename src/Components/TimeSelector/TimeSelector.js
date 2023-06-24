@@ -12,18 +12,18 @@ function TimeSelector({labelText, HandleChangeTimeState}) {
                     formattedTime += "12";
                 } else {
                     const unformattedHour = parseInt(unformattedTime.substr(0,2));
-                    formattedTime += (unformattedHour - 12).toString();
+                    formattedTime += (unformattedHour - 12).toString(); // formats hour from military time to standard
                 }
-                formattedTime += unformattedTime.substr(2, 5);
-                formattedTime += " PM"
+                formattedTime += unformattedTime.substr(2, 5); // adds minutes (PM Branch)
+                formattedTime += " PM" 
                 console.log(formattedTime);
             } else {
                 if (unformattedTime.substr(0, 2) === "00") {
-                    formattedTime += "12";
+                    formattedTime += "12"; // formates hour from military time to standard time
                 } else {
-                    formattedTime += unformattedTime.substr(0, 2);
+                    formattedTime += unformattedTime.substr(0, 2); // adds hour
                 }
-                formattedTime += unformattedTime.substr(2, 5);
+                formattedTime += unformattedTime.substr(2, 5); // adds minutes
                 formattedTime += " AM"
                 console.log(formattedTime);
             }
